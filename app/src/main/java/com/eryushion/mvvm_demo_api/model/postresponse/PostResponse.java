@@ -16,27 +16,5 @@ public class PostResponse{
 	@SerializedName("userId")
 	public int userId;
 
-	public int getId(){
-		return id;
-	}
 
-
-
-	public String getBody(){
-		return body;
-	}
-
-	public int getUserId(){
-		return userId;
-	}
-
-	@Override
-	public String toString() {
-		return "PostResponse{" +
-				"id=" + id +
-				", title='" + title + '\'' +
-				", body='" + body + '\'' +
-				", userId=" + userId +
-				'}';
-	}
 }

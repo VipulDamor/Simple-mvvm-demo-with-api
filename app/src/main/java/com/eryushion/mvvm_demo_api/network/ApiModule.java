@@ -36,7 +36,7 @@ public class ApiModule implements AppConstant {
     @Singleton
     Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
-                .baseUrl(BASEURL)
+                .baseUrl(BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
