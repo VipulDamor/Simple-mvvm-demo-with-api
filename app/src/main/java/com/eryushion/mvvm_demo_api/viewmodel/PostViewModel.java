@@ -37,7 +37,6 @@ public class PostViewModel extends ViewModel {
                         result -> mutableLiveData.setValue(ApiResponse.success(result)),
                         throwable -> mutableLiveData.setValue(ApiResponse.error(throwable))
                 ));
-
     }
 
     @Override

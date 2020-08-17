@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.eryushion.mvvm_demo_api.App;
 import com.eryushion.mvvm_demo_api.R;
@@ -59,16 +58,13 @@ public class MainActivity extends AppCompatActivity {
             case SUCCESS:
                 progressDialog.dismiss();
                 assert apiResponse.data != null;
-                setdatatoview(apiResponse.data);
-                PostResponse postResponse = new Gson().fromJson(apiResponse.data.toString(),PostResponse.class);
-                activityMainBinding.setPost(postResponse);
+                setDataToView(apiResponse.data);
                 break;
         }
     }
 
-    private void setdatatoview(JsonElement data) {
-        if (data!=null){
-            Toast.makeText(this, data.toString()+"", Toast.LENGTH_SHORT).show();
-        }
+    private void setDataToView(JsonElement data) {
+        PostResponse postResponse = new Gson().fromJson(data.toString(),PostResponse.class);
+        activityMainBinding.setPost(postResponse);
     }
 }
